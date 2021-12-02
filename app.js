@@ -13,9 +13,14 @@ function app(people){
       break;
     case 'no':
       // TODO: search by traits
-      break;
-      default:
-    app(people); // restart app
+      let eyeColorResult= promptFor("What's their eye color?")
+      data.filter(function(el){
+        return (el=eyeColorResult)
+      })
+
+
+    default:
+        app(people); // restart app
       break;
   }
   
