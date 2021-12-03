@@ -1,5 +1,5 @@
 function app(people){
-	var searchType = promptFor("Would you like to search by 'name' or 'traits'? Enter 'name', 'traits', or click cancel to stop.", eitherNameOrTraits);
+	let searchType = promptFor("Would you like to search by 'name' or 'traits'? Enter 'name', 'traits', or click cancel to stop.", eitherNameOrTraits);
     let filteredPeople;
 	let stopRunning
 	switch(searchType){
@@ -79,7 +79,7 @@ function mainMenu(person, people){
         alert("Could not find that individual.");
         return app(people);
     }
-	var displayOption = prompt("Found " + person.firstName + " " + person.lastName + ". Do you want to know their 'info', 'family', or 'descendants'? Please enter the option you want, or type 'pass' to see the next match (if there is one), 'restart' to start over or click cancel to quit.");
+	let displayOption = prompt("Found " + person.firstName + " " + person.lastName + ". Do you want to know their 'info', 'family', or 'descendants'? Please enter the option you want, or type 'pass' to see the next match (if there is one), 'restart' to start over or click cancel to quit.");
 	switch(displayOption){
 		case "info":
 		    return displayPerson(person, people);
@@ -110,7 +110,7 @@ function mainMenu(person, people){
 	}
 }
 function pickOneOrMoreTraits(people){
-	var searchType = promptFor("Would you like to search more than one trait?  Enter 'yes', 'no', or click cancel to stop.", yesNo);
+	let searchType = promptFor("Would you like to search more than one trait?  Enter 'yes', 'no', or click cancel to stop.", yesNo);
     let filteredPeople;
 	let traits;
     switch(searchType){
@@ -133,7 +133,7 @@ function pickOneOrMoreTraits(people){
 }
 function promptFor(question, valid){
     do{
-        var response = prompt(question);
+        let response = prompt(question);
 		if (response === null || response === "") {
 			return;
 		}else { 
@@ -184,14 +184,14 @@ function searchByHeight(people){
     return newArray;
 }
 function searchByName(people){
-	var firstName = promptFor("What is the person's first name?", chars);
+	let firstName = promptFor("What is the person's first name?", chars);
 	if (firstName === null || firstName === undefined) {
 		return;
 	}else { 
 		firstName = capitalize(firstName.toLowerCase().trim());	
 	}
 	
-    var lastName = promptFor("What is the person's last name?", chars);
+    let lastName = promptFor("What is the person's last name?", chars);
 	if (lastName === null || lastName === undefined) {
 		return;
 	}else { 
